@@ -7,7 +7,7 @@ This example project shows how you can use the Checkly CLI in a monitoring as co
 
 ## Project Structure
 
-This project has the basic boilerplate files needed to get you started.
+This project shows one possible way to build POM based checks that can be executed on-demand and run on a schedule. One flow, checkout, is covered right now, with more coming soon.
 
 ```
 .
