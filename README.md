@@ -1,7 +1,6 @@
-# Checkly Monitoring-as-code: Danube CLI PageObject project
+# Checkly CLI PageObject example
 
-This example project shows how you can use the Checkly CLI in a monitoring as code (MaC) workflow. We are using the
-https://danube-web.shop as a monitoring target.
+This example project shows how you can use the Checkly CLI in a monitoring as code (MaC) workflow using the PageObject Model (POM). We are using https://danube-web.shop as a monitoring target.
 
 1. Write API Checks and Playwright-powered Browser Checks!
 2. Test -> Deploy: now you have your app monitored around the clock. All from your code base.
@@ -20,6 +19,8 @@ This project has the basic boilerplate files needed to get you started.
 |   |-- api.check.ts
 |   `-- checkout.spec.ts
 |-- checkly.config.ts
+|-- playwright.config.ts
+|-- README.md
 `-- package.json
 ```
 
@@ -28,7 +29,7 @@ This project has the basic boilerplate files needed to get you started.
 - Running `npx check deploy` will deploy your checks to Checkly, attach alert channels, and run them on a 10m schedule in the 
 region `us-east-1` and `eu-west-1`
 
-- As an additional option, running `npx playwright test` will run your `.spec.ts` in `__checks__` directories locally using the settings in `playwright.config.ts`
+- As an additional option, running `npx playwright test` will run your `.spec.ts` in `__checks__` directories locally using Playwright with the settings specified in `playwright.config.ts`
 
 ## CLI Commands
 

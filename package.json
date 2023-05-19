@@ -1,11 +1,11 @@
 {
-  "name": "boilerlate-project",
+  "name": "checkly-sample-pom",
   "version": "1.0.0",
-  "description": "",
+  "description": "An example project showcasing how to use the Checkly CLI in a PageObject project.",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {},
-  "author": "",
+  "author": "Giovanni Rago, giovanni@checklyhq.com",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.33.0",
