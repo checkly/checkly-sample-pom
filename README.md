@@ -1,6 +1,6 @@
 # Checkly CLI PageObject example
 
-This example project shows how you can use the Checkly CLI in a monitoring as code (MaC) workflow using the PageObject Model (POM). We are using https://danube-web.shop as a monitoring target.
+This example project shows how you can use the Checkly CLI in a monitoring as code (MaC) workflow using the [PageObject Model](https://martinfowler.com/bliki/PageObject.html) (POM). We are using https://danube-web.shop as a monitoring target.
 
 1. Write API Checks and Playwright-powered Browser Checks!
 2. Test -> Deploy: now you have your app monitored around the clock. All from your code base.

@@ -3,7 +3,7 @@ import { defineConfig } from 'checkly'
 const config = defineConfig({
   projectName: 'Danube POM',
   logicalId: 'danube-pom',
-  repoUrl: 'https://github.com/checkly/checkly-cli',
+  repoUrl: 'https://github.com/checkly/cli-demo-pom',
   checks: {
     frequency: 10,
     locations: ['us-east-1', 'eu-west-1'],

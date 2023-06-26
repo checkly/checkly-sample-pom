@@ -9,13 +9,13 @@ export class DanubeCheckoutPage {
 		this.buyButton = page.locator('.call-to-action').last();
 	}
 
-	async completeOrderForm() {
-		await this.page.locator('#s-name').type('Max');
-		await this.page.locator('#s-surname').type('Mustermann');
-		await this.page.locator('#s-address').type('Charlottenstr. 57');
-		await this.page.locator('#s-zipcode').type('10117');
-		await this.page.locator('#s-city').type('Berlin');
-		await this.page.locator('#s-company').type('Firma GmbH');
+	async completeOrderForm(user) {
+		await this.page.locator('#s-name').type(user.name);
+		await this.page.locator('#s-surname').type(user.surname);
+		await this.page.locator('#s-address').type(user.address.streetAndNumber);
+		await this.page.locator('#s-zipcode').type(user.address.zipcode);
+		await this.page.locator('#s-city').type(user.address.city);
+		await this.page.locator('#s-company').type(user.address.company);
 		await this.page.locator('.checkout > form').click();
 		await this.page.locator('#asap').click();
 	}

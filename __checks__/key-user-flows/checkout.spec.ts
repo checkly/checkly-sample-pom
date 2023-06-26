@@ -3,6 +3,7 @@ import { DanubeShopPage } from './pages/shop';
 import { DanubeItemDetailsPage } from './pages/itemDetails';
 import { DanubeCartPage } from './pages/cart';
 import { DanubeCheckoutPage } from './pages/checkout';
+import { registeredUser } from './data/users';
 
 test('checkout', async ({ page }) => {
 
@@ -16,7 +17,7 @@ test('checkout', async ({ page }) => {
 	await shopPage.selectShopItem();
 	await itemDetailsPage.addToCart();
 	await cartPage.proceedToCheckout();
-	await checkoutPage.completeOrderForm();
+	await checkoutPage.completeOrderForm(registeredUser);
 	await checkoutPage.finalizeOrder();
 
 	expect(await checkoutPage.successMessageIsShown());
