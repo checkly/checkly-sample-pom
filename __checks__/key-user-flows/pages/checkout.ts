@@ -2,26 +2,39 @@ import { expect, Locator, Page } from '@playwright/test';
 
 export class DanubeCheckoutPage {
 	readonly page: Page;
-	readonly buyButton: Locator;
+	readonly buttonBuy: Locator;
+	readonly fieldName: Locator;
+	readonly fieldSurname: Locator;
+	readonly fieldAddress: Locator;
+	readonly fieldZipCode: Locator;
+	readonly fieldCity: Locator;
+	readonly fieldCompany: Locator;
+	readonly optionAsap: Locator;
 
 	constructor(page: Page) {
 		this.page = page;
-		this.buyButton = page.locator('.call-to-action').last();
+		this.buttonBuy = page.locator('.call-to-action').last();
+		this.fieldName = page.locator('#s-name');
+		this.fieldSurname = page.locator('#s-surname')
+		this.fieldAddress = page.locator('#s-address')
+		this.fieldZipCode = page.locator('#s-zipcode')
+		this.fieldCity = page.locator('#s-city')
+		this.fieldCompany = page.locator('#s-company')
+		this.optionAsap = page.locator('#asap')
 	}
 
 	async completeOrderForm(user) {
-		await this.page.locator('#s-name').type(user.name);
-		await this.page.locator('#s-surname').type(user.surname);
-		await this.page.locator('#s-address').type(user.address.streetAndNumber);
-		await this.page.locator('#s-zipcode').type(user.address.zipcode);
-		await this.page.locator('#s-city').type(user.address.city);
-		await this.page.locator('#s-company').type(user.address.company);
-		await this.page.locator('.checkout > form').click();
-		await this.page.locator('#asap').click();
+		await this.fieldName.type(user.name);
+		await this.fieldSurname.type(user.name);
+		await this.fieldAddress.type(user.name);
+		await this.fieldZipCode.type(user.name);
+		await this.fieldCity.type(user.name);
+		await this.fieldCompany.type(user.name);
+		await this.optionAsap.click()
 	}
-
+	
 	async finalizeOrder() {
-		await this.buyButton.click();
+		await this.buttonBuy.click();
 	}
 
 	async successMessageIsShown() {
